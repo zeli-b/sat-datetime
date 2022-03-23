@@ -32,7 +32,7 @@ class SatDatetime:
 
     def __str__(self):
         """ A user-friendly string representation of SatTimedelta. """
-        return f'{self.year}. {self.day:02d}. {self.month}. {self.hour:02d}:{self.minute:02d}:{self.second:02.6f}'
+        return f'{self.year}. {self.month}. {self.day:02d}. {self.hour:02d}:{self.minute:02d}:{self.second:09.6f}'
 
     def __repr__(self):
         """ A programmer-friendly string representation of SatTimedelta. """
