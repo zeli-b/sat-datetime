@@ -1,3 +1,4 @@
 .idea/
 sat_datetime.egg-info/
 dist/
+.DS_Store
