@@ -1,11 +1,14 @@
 # sat-datetime
 
-## 계산법
-2017년 12월 25일 자소크력 1년. 일주일에 20년씩 추가
+> 사트 자소크력 계산을 위한 라이브러리
 
-## 설정
-`y`가 자소크력 년, `x`가 서력 년일 때
-`y = (595x + 70,509)/404`, `x = (404y - 70,509)/595`
+다음 코드를 통해 자소크력 년을 알아낼 수 있습니다.
 
-하지만 자소크와 지구는 `v[m/s]: γ = 1040`의 속도로 반대 방향으로 운동하고 있다.
-(이때 `v`는 `(149,896,229 sqrt(1,081,599))/520 m/s`, 약 `299,792,319.412478 m/s ≈ 0.99999 95377 21 c`)
+```python
+from datetime import datetime
+
+from sat_datetime import SatDatetime
+
+zasokese_now = SatDatetime.get_from_datetime(datetime.now())
+print(zasokese_now)
+```

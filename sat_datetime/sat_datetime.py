@@ -5,8 +5,8 @@ from typing import Union
 class SatDatetime:
     @staticmethod
     def get_from_datetime(date):
-        delta = date - datetime(2017, 12, 25)
-        convert = (delta.days + (delta.seconds + delta.microseconds / 1000000) / 86400) / 7 * 20
+        delta = date - datetime(2009, 1, 31)
+        convert = delta.days + (delta.seconds + delta.microseconds / 1000000) / 86400
         return SatDatetime(convert)
 
     def __init__(self,
@@ -179,7 +179,3 @@ class SatTimedelta:
 
     def get_in_years(self) -> float:
         return self.get_in_seconds() / 15206400
-
-
-if __name__ == '__main__':
-    pass
