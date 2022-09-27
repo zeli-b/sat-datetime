@@ -5,8 +5,13 @@ from typing import Union
 class SatDatetime:
     @staticmethod
     def get_from_datetime(date):
-        delta = date - datetime(2009, 1, 31)
-        convert = delta.days + (delta.seconds + delta.microseconds / 1000000) / 86400
+        if date >= datetime(2022, 10, 10):  # >=5000
+            delta = date - datetime(2009, 1, 31)
+            convert = delta.days + (delta.seconds + delta.microseconds / 1000000) / 86400
+        else:  # <5000
+            delta = date - datetime(2017, 12, 25)
+            convert = (delta.days + (delta.seconds + delta.microseconds / 1000000) / 86400) / 7 * 20
+
         return SatDatetime(convert)
 
     def __init__(self,
